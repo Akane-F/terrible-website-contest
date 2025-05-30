@@ -6,7 +6,7 @@ const sizes = ["size-1x1", "size-2x2", "size-3x3", "size-4x4"];
 for (let i = 0; i < 100; i++) {
     const tile = document.createElement("div");
     const size = sizes[Math.floor(Math.random() * sizes.length)];
-    tile.className = `tile ${size}`;
+    tile.className = `tile ${size} laughShake2`;
 
     const img = document.createElement("img");
     img.src = "./images/waraiotoko.png";
@@ -18,7 +18,7 @@ for (let i = 0; i < 100; i++) {
 for (let i = 0; i < 100; i++) {
     const tile = document.createElement("div");
     const size = sizes[Math.floor(Math.random() * sizes.length)];
-    tile.className = `tile ${size}`;
+    tile.className = `tile ${size} laughShake1`;
 
     const img = document.createElement("img");
     img.src = "./images/waraiotoko.png";
@@ -30,7 +30,7 @@ for (let i = 0; i < 100; i++) {
 for (let i = 0; i < 100; i++) {
     const tile = document.createElement("div");
     const size = sizes[Math.floor(Math.random() * sizes.length)];
-    tile.className = `tile ${size}`;
+    tile.className = `tile ${size} laughShake2`;
 
     const img = document.createElement("img");
     img.src = "./images/waraiotoko.png";
