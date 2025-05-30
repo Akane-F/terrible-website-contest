@@ -34,10 +34,18 @@ for (let i = 0; i < 100; i++) {
     const tile = document.createElement("div");
     const size = sizes[Math.floor(Math.random() * sizes.length)];
     const laughShake = laughShakes[Math.floor(Math.random() * laughShakes.length)];
-    tile.className = `tile ${size} ${laughShake}`;
+    tile.className = `tile ${size} ${laughShake} laughImage`;
 
     const img = document.createElement("img");
     img.src = "./images/waraiotoko.png";
+
+    img.addEventListener('click', () => {
+        const laughSoundSrc = "./videos/chipmunks-hehehei-113723.mp3";
+        const laughSound = new Audio(laughSoundSrc);
+        laughSound.loop = true;
+        laughSound.play();
+    });
+
     tile.appendChild(img);
 
     grid3.appendChild(tile);
