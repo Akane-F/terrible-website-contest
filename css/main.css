@@ -166,3 +166,8 @@ main {
 .laughShake2 {
     animation: laughShake2 1.2s ease-in-out infinite;
 }
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}

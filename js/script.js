@@ -44,6 +44,15 @@ for (let i = 0; i < 100; i++) {
         const laughSound = new Audio(laughSoundSrc);
         laughSound.loop = true;
         laughSound.play();
+        img.classList.add('fade-out');
+        setTimeout(() => {
+            img.style.display = 'none';
+        }, 500);
+
+        setTimeout(() => {
+            img.style.display = 'block';
+            img.classList.remove('fade-out');
+        }, 1000);
     });
 
     tile.appendChild(img);
