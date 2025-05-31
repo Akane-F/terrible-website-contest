@@ -45,8 +45,8 @@ window.onload = () => {
     // Initialize
     let posX = (screenWidth - img.offsetWidth) / 2;
     let posY = (screenHeight - img.offsetHeight) / 2;
-    let velX = 3;
-    let velY = 2;
+    let velX = 9;
+    let velY = 5;
 
     const imgWidth = img.offsetWidth;
 
