@@ -63,6 +63,14 @@ for (let i = 0; i < 100; i++) {
 
 window.onload = () => {
     const img = document.getElementById('big-logo-image');
+
+    img.addEventListener('click', () => {
+        const laughSoundSrc = "./videos/chipmunks-hehehei-113723.mp3";
+        const laughSound = new Audio(laughSoundSrc);
+        laughSound.loop = true;
+        laughSound.play();
+    });
+
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
