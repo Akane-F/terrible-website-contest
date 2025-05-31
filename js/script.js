@@ -27,30 +27,32 @@ function drawWaraiotoko(gridName) {
 
 window.onload = () => {
     const img = document.getElementById('big-logo-image');
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    img.style.left = (screenWidth - img.offsetWidth) / 2 + 'px';
+    img.style.top = (screenHeight - img.offsetHeight) / 2 + 'px';
 
     img.addEventListener('click', () => {
         const laughSoundSrc = "./videos/chipmunks-hehehei-113723.mp3";
         const laughSound = new Audio(laughSoundSrc);
         laughSound.loop = true;
         laughSound.play();
-
+  
         drawWaraiotoko("grid1");
         drawWaraiotoko("grid2");
         drawWaraiotoko("grid3");
     });
 
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-
-    // Initialize
-    let posX = (screenWidth - img.offsetWidth) / 2;
-    let posY = (screenHeight - img.offsetHeight) / 2;
+    // Initialize(imageHeight = 50vh)
+    let posX = (screenWidth - screenHeight) / 2;
+    let posY = screenHeight / 2;
     let velX = 9;
     let velY = 5;
 
-    const imgWidth = img.offsetWidth;
-
     function animate() {
+      const imgWidth = img.offsetWidth;
+
       // Moving
       posX += velX;
       posY += velY;
@@ -70,12 +72,13 @@ window.onload = () => {
       img.style.top = posY + 'px';
 
       requestAnimationFrame(animate);
+      img.removeEventListener('mouseenter', animate);
     }
 
-    img.style.left = posX + 'px';
-    img.style.top = posY + 'px';
-
-    setTimeout(() => {
-        animate();
-    }, 500)
+    img.addEventListener('mouseenter', () => {
+        img.style.height = '50vh';
+        img.classList.add('selfSpin');
+        
+        requestAnimationFrame(animate);
+    }, {once: true});
 }

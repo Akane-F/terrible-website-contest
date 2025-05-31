@@ -88,12 +88,10 @@ main {
 
 #big-logo img {
     position: absolute;
-    height: 50vh;
+    height: 80vh;
     width: auto;
     pointer-events: all;
     opacity: 90%;
-    animation: selfSpin 3s linear infinite;
-    animation-delay: 0.5s;
 }
 
 @keyframes noiseAnim {
@@ -112,6 +110,10 @@ main {
 @keyframes selfSpin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+.selfSpin {
+    animation: selfSpin 3s linear infinite;
 }
 
 @keyframes laughShake1 {
