@@ -44,6 +44,7 @@ for (let i = 0; i < 100; i++) {
         const laughSound = new Audio(laughSoundSrc);
         laughSound.loop = true;
         laughSound.play();
+
         img.classList.add('fade-out');
         setTimeout(() => {
             img.style.display = 'none';
@@ -59,8 +60,3 @@ for (let i = 0; i < 100; i++) {
 
     grid3.appendChild(tile);
 }
-
-const bigLogo = document.getElementById("big-logo");
-const img = document.createElement("img");
-img.src = "./images/waraiotoko.png";
-bigLogo.appendChild(img);

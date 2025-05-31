@@ -85,6 +85,20 @@ main {
     width: auto;
     pointer-events: all;
     opacity: 90%;
+    animation: jitter 0.1s infinite, noiseAnim 0.1s infinite;
+}
+
+@keyframes noiseAnim {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.5) contrast(1.5); }
+}
+
+@keyframes jitter {
+    0%   { transform: translate(0px, 0px); }
+    25%  { transform: translate(1px, -1px); }
+    50%  { transform: translate(-1px, 1px); }
+    75%  { transform: translate(1px, 1px); }
+    100% { transform: translate(0px, -1px); }
 }
 
 @keyframes laughShake1 {
