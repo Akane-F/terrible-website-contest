@@ -74,18 +74,23 @@ main {
     z-index: 4;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     pointer-events: none;
+    animation:
+        noiseAnim 0.1s infinite,
+        jitter 0.1s infinite;
 }
 
 #big-logo img {
-    height: 60vh;
+    position: absolute;
+    height: 50vh;
     width: auto;
     pointer-events: all;
     opacity: 90%;
-    animation: jitter 0.1s infinite, noiseAnim 0.1s infinite;
+    animation: selfSpin 3s linear infinite;
+    animation-delay: 0.5s;
 }
 
 @keyframes noiseAnim {
@@ -99,6 +104,11 @@ main {
     50%  { transform: translate(-1px, 1px); }
     75%  { transform: translate(1px, 1px); }
     100% { transform: translate(0px, -1px); }
+}
+
+@keyframes selfSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @keyframes laughShake1 {
