@@ -15,7 +15,7 @@ main {
     height: 100vh;
 }
   
-#grid,
+#grid1,
 #grid2,
 #grid3 {
     position: absolute;
@@ -30,12 +30,14 @@ main {
     gap: 0;
   }
   
-#grid {
+#grid1 {
     z-index: 1;
+    writing-mode: vertical-lr;
 }
   
 #grid2 {
     z-index: 2;
+    writing-mode: vertical-rl;
 }
   
 #grid3 {
