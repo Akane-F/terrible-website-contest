@@ -1,3 +1,5 @@
+let animationId = null;
+
 function showModalWithSound() {
     document.getElementById("alertModal").style.display = "flex";
     const beepSound = document.getElementById("beepSound");
@@ -10,6 +12,18 @@ function closeModal() {
     beepSound.pause();
     beepSound.currentTime = 0;
     document.getElementById("alertModal").style.display = "none";
+}
+
+function end() {
+    document.getElementById("successModal").style.display = "flex";
+    document.getElementById("grid1").style.display = "none";
+    document.getElementById("grid2").style.display = "none";
+    document.getElementById("grid3").style.display = "none";
+    const bigLogo = document.getElementById('big-logo-image');
+    bigLogo.style.height = '80vh';
+    bigLogo.style.left = (window.innerWidth - bigLogo.offsetWidth) / 2 + 'px';
+    bigLogo.style.top = (window.innerHeight - bigLogo.offsetHeight) / 2 + 'px';
+    bigLogo.classList.remove('selfSpin');
 }
 
 function drawWaraiotoko(gridName) {
@@ -28,6 +42,10 @@ function drawWaraiotoko(gridName) {
         img.src = "./images/waraiotoko.png";
         img.alt = "Warai Otoko";
 
+        if (gridName == 'grid3' && i % 7 == 0) {
+            img.addEventListener("click", end);
+        }
+
         if (gridName == 'grid3' && i % 3 == 0) {
             img.classList.add('escape-right');
         }
@@ -43,7 +61,7 @@ function drawWaraiotoko(gridName) {
         if (gridName == 'grid3' && i % 5 == 0) {
             img.addEventListener("click", showModalWithSound);
         }
-    
+
         tile.appendChild(img);
         grid.appendChild(tile);   
 
