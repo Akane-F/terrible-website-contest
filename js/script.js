@@ -28,8 +28,16 @@ function drawWaraiotoko(gridName) {
         img.src = "./images/waraiotoko.png";
         img.alt = "Warai Otoko";
 
+        if (gridName == 'grid3' && i % 3 == 0) {
+            img.classList.add('escape-right');
+        }
+
+        if (gridName == 'grid3' && i % 3 == 1) {
+            img.classList.add('escape-left');
+        }
+
         if (gridName == 'grid3' && i % 4 == 0) {
-            img.classList.add('disappear');
+                img.classList.add('disappear');
         }
 
         if (gridName == 'grid3' && i % 5 == 0) {

@@ -80,6 +80,19 @@ main {
     opacity: 0;
 }
 
+.escape-right,
+.escape-left {
+    transition: transform 0.3s linear;
+}
+
+.escape-right:hover {
+    transform: translateX(300px);
+}
+
+.escape-left:hover {
+    transform: translateX(-300px);
+}
+
 #big-logo {
     position: absolute;
     z-index: 4;
