@@ -1,3 +1,17 @@
+function showModalWithSound() {
+    document.getElementById("alertModal").style.display = "flex";
+    const beepSound = document.getElementById("beepSound");
+    beepSound.loop = true;
+    beepSound.play();
+}
+
+function closeModal() {
+    const beepSound = document.getElementById("beepSound");
+    beepSound.pause();
+    beepSound.currentTime = 0;
+    document.getElementById("alertModal").style.display = "none";
+}
+
 function drawWaraiotoko(gridName) {
     const grid = document.getElementById(gridName);
     const sizes = ["size-1x1", "size-2x2", "size-3x3", "size-4x4"];
@@ -13,6 +27,10 @@ function drawWaraiotoko(gridName) {
         const img = document.createElement("img");
         img.src = "./images/waraiotoko.png";
         img.alt = "Warai Otoko";
+
+        if (gridName == 'grid3' && i % 5 == 0) {
+            img.addEventListener("click", showModalWithSound);
+        }
     
         tile.appendChild(img);
         grid.appendChild(tile);   
