@@ -72,6 +72,14 @@ main {
     grid-row: span 4;
 }
 
+.disappear {
+    transition: opacity 0.8s;
+}
+
+.disappear:hover {
+    opacity: 0;
+}
+
 #big-logo {
     position: absolute;
     z-index: 4;
